@@ -14,6 +14,7 @@ import javax.validation.Valid;
 
 
 @Controller
+@RequestMapping("/index")
 public class  IndexController extends BaseController{
 
     @Autowired
@@ -31,13 +32,13 @@ public class  IndexController extends BaseController{
         if(result.hasErrors()){
             return new ResponseData().failed(result.getFieldError().toString());
         }
-        return null;
+        return new ResponseData().success();
     }
 
-    @RequestMapping
+    @RequestMapping("/login")
     @ResponseBody
-    public ResponseData login(String userName,String password){
-        return null;
+    public ResponseData login(){
+        return new ResponseData().success();
     }
 
     @ResponseBody
